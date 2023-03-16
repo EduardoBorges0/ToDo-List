@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/* Color selection */
+:root{
+  --colorTodo:#5C8EF2;
+  --colorMain:#F2F2F2 ;
+  --colorActive:#4B64F2;
+}
+body{
+  background-color: var(--colorMain)
+}
+/* Add task items */
+#form{
+  display: flex;
+  gap: 1rem;
+  transform: translate(24%, 50%)
+}
+#input-text{
+  background-color: var(--colorMain);
+  width: 38em;
+  height: 3rem;
+  border-radius: .9em;
+  border: 1px solid var(--colorTodo);
+  font-size: 1.3em;
+  text-align: center;
+}
+#btn-add{
+  width: 4em;
+  height:4em;
+  border: 1px solid #222;
+  border-radius: 1.3em;
+}
+#plus {
+  font-size: 2em;
+}
+/* To do List items */
+.toDo{
+  display: flex;
+  transform: translate(50%, 150%);
+  width: 45em;
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color:var(--colorTodo);
+  color: white;
+  border-radius: 1em;
+}
+.toDo > button{
+  transform: translate(-40%, -10%);
+  width: 7em;
+  height: 2.2em;
+  border-radius: .9em;
+  border: none;
+}
+.toDo > h3{
+  margin-left: 2em
+}
+.toDo > .toDo-confirm{
+  position: fixed;
+  left: 40em;
+}
+.toDo > .toDo-deleted{
+  position: fixed;
+  left: 50em;
+}
+/* To do check */
+.done{
+  text-decoration: line-through;
+  background-color: var(--colorActive);
+  transition: 0.6s;
+}
+/* Responsive */
+@media screen and (max-width: 600px){
+  #form {
+    transform: translate(5%, 50%);
+    width: 29em;
+  }
+  #btn-add {
+    position: fixed;
+    left: 23em;
+    width: 4em;
+  }
+  #input-text{
+    width: 14em;
+  }
+  .toDo {
+    transform: translate(6%, 140%);
+    width: 21em;
+  }
+  .toDo > button {
+    position: fixed;
+    transform: translate(-29em, -.6em);
+    width: 5em;
+    height:3em ;
+    border-radius:3em;
+  }
+  .toDo > .toDo-confirm {
+    transform: translate(-40.2em, -1em);
+    width: 101%;
+    height:3.8em;
+    opacity: 0%;
+  }
+  .toDo > h3 {
+    margin-left: 3em
+  }
+}
